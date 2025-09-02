@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { MinusIcon, PlusIcon } from "lucide-react";
 import type React from "react";
 import { useState } from "react";
 
@@ -7,20 +8,13 @@ export const Index: React.FC = () => {
 
   return (
     <div className="flex h-dvh place-content-center place-items-center">
-      <button
-        className="w-8 border"
-        onClick={() => setCount((count) => count - 1)}
-      >
-        -1
-      </button>
-      <span className="grid w-8 place-items-center">{count}</span>
-      <button
-        className="w-8 border"
-        onClick={() => setCount((count) => count + 1)}
-      >
-        +1
-      </button>
-      <Button>aba</Button>
+      <Button size="icon" onClick={() => setCount(count - 1)}>
+        <MinusIcon />
+      </Button>
+      <div className="w-10 text-center">{count}</div>
+      <Button size="icon" onClick={() => setCount(count + 1)}>
+        <PlusIcon />
+      </Button>
     </div>
   );
 };
